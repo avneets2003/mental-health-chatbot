@@ -15,10 +15,10 @@ import streamlit as st
 # Load environment variables
 load_dotenv()
 
-PINECONE_API_KEY = os.environ.get("PINECONE_API_KEY")
-PINECONE_CLOUD = os.environ.get("PINECONE_CLOUD")
-PINECONE_REGION = os.environ.get("PINECONE_REGION")
-MISTRALAI_API_KEY = os.environ.get("MISTRALAI_API_KEY")
+PINECONE_API_KEY = st.secrets["pinecone_api_key"]
+PINECONE_CLOUD = st.secrets["pinecone_cloud"]
+PINECONE_REGION = st.secrets["pinecone_region"]
+MISTRALAI_API_KEY = st.secrets["mistralai_api_key"]
 
 # Set up Pinecone
 pc = Pinecone(api_key=PINECONE_API_KEY)
